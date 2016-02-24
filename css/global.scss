@@ -6,7 +6,7 @@ div{
   text-align: center;
 }
 
-@media #{$breakpoint-medium}{
+@media #{"only screen and (min-width: " + $breakpoint-medium + ")"}{
   div.align-right{
     text-align:right;
   }

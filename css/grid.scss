@@ -38,7 +38,7 @@ img {
   min-height: 1px;
   }
 
-@media #{$breakpoint-medium}{
+@media #{"only screen and (min-width: " + $breakpoint-medium + ")"}{
   .wrapper {
     width: 95%;
     max-width: $grid-max-width;

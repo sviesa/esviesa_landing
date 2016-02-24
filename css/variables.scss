@@ -3,8 +3,8 @@ $grid-columns: 12;
 $grid-max-width: 966px;
 
 // breakpoints
-$breakpoint-small: "only screen and (min-width: 30em)";
-$breakpoint-medium: "only screen and (min-width: 50em)";
+$breakpoint-small: 30em;
+$breakpoint-medium: 45em;
 
 //styling variables
 $header-background: black;

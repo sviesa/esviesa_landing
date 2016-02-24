@@ -1,3 +1,25 @@
-@media #{$breakpoint-medium}{
+.circle{
+  border: 5px solid;
+  height:50px;
+  width:50px;
+  @include prefix(border-radius, 100%);
+  @include centerer(right, 50px);
+}
 
+.text-container{min-height: 120px;}
+.image-container{height: 120px;}
+
+@media #{"only screen and (min-width: " + $breakpoint-medium + ")"}{
+  .equal-height{
+    position: relative;
+    .image-container{
+      @include centerer(top, 120px);
+    }
+    &.text-right{
+      .text-container{float:right;}
+    }
+    &.image-right{
+      .image-container{right:0;}
+    }
+  }
 }
