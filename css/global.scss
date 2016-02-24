@@ -1,0 +1,13 @@
+div{
+  border:1px solid black;
+}
+
+.centered{
+  text-align: center;
+}
+
+@media #{$breakpoint-medium}{
+  div.align-right{
+    text-align:right;
+  }
+}
