@@ -6,6 +6,14 @@
   #{$property}: #{$value};
 }
 
+@mixin prefixvalue($property, $value) {
+  $vendors: webkit moz ms o;
+  @each $vendor in $vendors {
+    #{$property}: #{"-" + $vendor + "-" + $value};
+  }
+  #{$property}: #{$value};
+}
+
 @mixin keyframes($animationName) {
   @-webkit-keyframes #{$animationName} {
     $browser: '-webkit-'; @content;
