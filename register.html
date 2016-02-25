@@ -5,6 +5,39 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <link rel="stylesheet" type="text/css" href="css/style-compiled.css">
+  <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script>
+  $(function() {
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#school" ).autocomplete({
+      source: availableTags
+    });
+  });
+  </script>
 </head>
 <body>
 
@@ -20,15 +53,34 @@
         <div class="button small outline">Prisijungti</div>
       </div>
     </div>
-    <div class="row">
-      <h1>Greitai pristatysime pasikeitusią skaitmeninę mokymosi aplinką e.ŠVIESA</h1>
-      <h3>Registruokitės ir pirmieji išbandykite atnaujintą e.Šviesos versiją</h3>
-    </div>
     <div class="row register">
-      <div class="button large colored red">Registruotis</div>
+      <div class="column-7">
+        <h1>Registruokitės ir pirmieji išbandykite atnaujintą e.Šviesos versiją</h1>
+        <div class="paragraph">
+          <p><font class="bold">Užduočių bankas</font> - tūkstančiai papildomų užduočių mokinių žinioms papildyti</p>
+          <p><font class="bold">Mokomoji medžiaga</font> - skaitmeniniai vadovėliai, leidinius papildanti teorija ir pavyzdžiai</p>
+          <p><font class="bold">Įrankiai mokytojams</font> - patogus pamokų vedimas ir mokinių pažangos stebėjimas</p>
+        </div>
+      </div>
+      <div class="column-5">
+        <form method="post">
+          <label for="email">El. pašto adresas*</label><br>
+          <input class="<?print $email_f;?>" type="text" name="email" id="email" value ="<?print $email;?>"/>
+          <br><br>
+          <label for="school">Mokyklos pavadinimas*</label><br>
+          <input type="text" name="school" id="school" value ="<?print $school;?>"/>
+          <br><br>
+          <label for="phone">Telefonas*</label><br>
+          <input type="text" name="phone" id="phone" value ="<?print $phone;?>"/>
+          <br><br>
+          <p>*Privalomi užpildyti laukai<p><br>
+          <!-- <input type="submit" name="submit" id="submit"> -->
+          <div id="submit" class="button colored green" onclick="document.forms[0].submit()">Registruotis</div>
+        </form>
+      </div>
     </div>
-    <div class="row centered arrow">
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 306 306" style="enable-background:new 0 0 306 306;" xml:space="preserve"> <g> <g id="expand-more"> <polygon points="270.3,58.65 153,175.95 35.7,58.65 0,94.35 153,247.35 306,94.35 " fill="#353535"/> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
+    <div class="row list">
+
     </div>
   </div>
 </header>
