@@ -58,14 +58,25 @@ a{
   @include prefix(border-radius, 5em);
   &.outline{
     border:2px solid;
+    &:hover{
+      border:2px solid #01d31b;
+      color: white;
+      background-color: #01d31b;
+    }
   }
   &.colored{
     color: white;
     &.red{
       background-color: #bf0000;
+      &:hover{
+        background-color: #a40c0c;
+      }
     }
     &.green{
       background-color: #01d31b;
+      &:hover{
+        background-color: #03be1a;
+      }
     }
   }
 
