@@ -69,5 +69,16 @@
   }
   @media #{"only screen and (max-width: " + $breakpoint-medium + ")"}{
     .text-container{text-align: center;}
+    .image-container{
+      height: 320px;
+      min-width: 320px;
+      img{
+        height: 320px !important;
+        @include centerer(left, 320px);
+      }
+    }
+    .wrapper{
+      padding: 0;
+    }
   }
 }

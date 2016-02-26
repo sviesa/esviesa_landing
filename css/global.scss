@@ -29,7 +29,7 @@ a{
 }
 .title1{
   font-family: apercu-bold;
-  padding: 100px;
+  padding: 100px 0;
   color: #9c9c9c;
   @include prefixvalue( background, linear-gradient(white, whitesmoke));
   // background: #f5f5f5;
@@ -40,7 +40,7 @@ a{
 }
 .title2{
   font-family: apercu-bold;
-  padding: 100px;
+  padding: 100px 0;
   color: #353535;
   background: white;
   font-size: 15pt;
