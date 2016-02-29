@@ -1,5 +1,5 @@
 .register{
-  padding: 65px 0;
+  padding: 35px 0;
   h1{
     font-size: 35pt;
     max-width: 600px;
@@ -22,7 +22,7 @@
     padding: 40px 35px;
     color: black;
     background-color: white;
-    box-shadow: 5px 5px 18px #B3B3B3;
+    @include prefix(box-shadow, 5px 5px 18px #B3B3B3);
     @include prefix(border-radius, 5px);
     // max-width: 400px;
     label{

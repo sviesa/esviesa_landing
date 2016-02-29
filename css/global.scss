@@ -59,6 +59,7 @@ a{
   padding: 100px 0;
   color: white;
   font-size: 15pt;
+  @include prefix(box-shadow, 0 5px 27px black inset);
   h2{
     padding-top: 30px;
   }

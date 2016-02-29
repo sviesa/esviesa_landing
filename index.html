@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <link rel="stylesheet" type="text/css" href="css/style-compiled.css">
+  <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/custom_transitions.js"></script>
 </head>
 <body>
 
@@ -24,7 +26,7 @@
       <h3>Registruokitės ir pirmieji išbandykite atnaujintą e.Šviesos versiją</h3>
     </div>
     <div class="row register">
-      <div class="button large colored red"><a href="register.php">Registruotis</a></div>
+      <div class="button large colored red"><a class="transition" href="register.php">Registruotis</a></div>
     </div>
     <div class="row centered arrow">
       <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 306 306" style="enable-background:new 0 0 306 306;" xml:space="preserve"> <g> <g id="expand-more"> <polygon points="270.3,58.65 153,175.95 35.7,58.65 0,94.35 153,247.35 306,94.35 " fill="#353535"/> </g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> <g> </g> </svg>
@@ -41,12 +43,12 @@
 <div class="main">
   <div class="wrapper">
 
-    <div class="row equal-height text-right">
+    <div class="row equal-height text-right transition move-left">
       <div class="column-5 image-container">
         <img class="news1" src="../img/foto1.jpg" alt="">
         <div class="circle">1</div>
       </div>
-      <div class="column-7 text-container green">
+      <div class="column-7 text-container">
         <h1>Užduočių bankas</h1>
         <h2>Tūkstančiai papildomų užduočių mokinių žinioms papildyti.</h2>
         <p>
@@ -54,12 +56,12 @@
         </p>
       </div>
     </div>
-    <div class="row equal-height image-right">
+    <div class="row equal-height image-right transition move-right">
       <div class="column-3 image-container">
         <img class="news1" src="../img/foto2.jpg" alt="">
         <div class="circle"> 2 </div>
       </div>
-      <div class="column-7 text-container blue">
+      <div class="column-7 text-container">
         <div class="text">
           <h1>Mokomoji medžiaga</h1>
           <h2>Skaitmeniniai vadovėliai, leidinius papildanti teorija ir pavyzdžiai..</h2>
@@ -69,12 +71,12 @@
         </div>
       </div>
     </div>
-    <div class="row equal-height text-right">
-      <div class="column-3 image-container">
+    <div class="row equal-height text-right transition move-left">
+      <div class="column-5 image-container">
         <img class="news1" src="../img/foto3.jpg" alt="">
         <div class="circle"> 3 </div>
       </div>
-      <div class="column-7 text-container orange">
+      <div class="column-7 text-container">
         <h1>Įrankiai mokytojams</h1>
         <h2>Patogus pamokų vedimas ir mokinių pažangos stebėjimas.</h2>
         <p>
@@ -85,8 +87,8 @@
   </div>
 </div>
 
-<div class="row centered title2">
-  <div class="wrapper">
+<div class="row centered title2 transition fade-in">
+  <div class="wrapper ">
     <h1>Registruokitės ir pirmieji išbandykite atnaujintą e.Šviesos versiją</h1>
     <h2>
     <div class="button large colored red"><a href="register.php">Registruotis</a></div>
@@ -95,9 +97,9 @@
 </div>
 <div class="row centered title3">
   <div class="wrapper">
-    <h1>prisijungimas prie senosios e.Šviesa sistemos</h1>
+    <h1>Prisijungimas prie senosios e.Šviesa sistemos</h1>
     <h2>
-    <div class="button small colored green"><a href="http://e.sviesa.lt/login">Registruotis</a></div>
+    <div class="button small colored green"><a href="http://e.sviesa.lt/login">Prisijungti</a></div>
     </h2>
   </div>
 </div>
@@ -125,7 +127,7 @@
       </div>
       <div class="column-6">
         <div>
-          <h1>e.Šviese internete</h1>
+          <h1>e.Šviesa internete</h1>
           <a target="_blank"  href="https://www.facebook.com/leidyklaSviesa">
             <img src="img/fb.png" alt="Facebook">
           </a>

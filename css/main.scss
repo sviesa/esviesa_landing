@@ -15,6 +15,7 @@
   }
 
   .text-container{
+    color:#353535;
     min-height: 400px;
     h1{
       font-family: apercu-bold;
@@ -31,9 +32,6 @@
       font-size: 13.5pt;
       line-height: 1.4em;
     }
-    &.green{ h1,h2,h3{color:#60ea94}}
-    &.blue{ h1,h2,h3{color:#61d0cc}}
-    &.orange{ h1,h2,h3{color:#e79a4e}}
   }
   .image-container{
     // padding: 20px 150px;
@@ -59,7 +57,8 @@
         @include centerer(top, 400px);
       }
       &.text-right{
-        .text-container{float:right; padding: 75px 0 0 15px;}
+
+        .text-container{float:right;}
       }
       &.image-right{
         .image-container{right:0;}
