@@ -3,18 +3,16 @@ header{
   h1, h2, h3{
     max-width: 900px;
   }
-  position: relative;
-  img.background{
-    z-index: -1;
-    position: absolute;
-    // top: 0;
-    // left: 0;
-    // right: 0;
-    // bottom: 0;
-    // margin: auto;
-    min-width: 100%;
-    min-height: 100%;
+  // position: relative;
+  &.regular-background{
+    background: url(../img/bkg1.jpg) no-repeat center center;
+    @include prefix(background-size, cover);
   }
+  &.blurred-background{
+    background: url(../img/bkg1blur.jpg) no-repeat center center;
+    @include prefix(background-size, cover);
+  }
+
   .logo{
     padding-top: 22px;
     img{

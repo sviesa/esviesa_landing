@@ -52,6 +52,8 @@ a{
   }
 }
 .title3{
+  background: url(../img/bkg2.jpg) no-repeat center center;
+  @include prefix(background-size, cover);
   overflow: hidden;
   font-family: apercu-bold;
   padding: 100px 0;
@@ -64,17 +66,6 @@ a{
     display: inline;
   }
   position: relative;
-  img.background{
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    // right: 0;
-    // bottom: 0;
-    margin: auto;
-    min-width: 120%;
-    min-height: 100% !important;
-  }
 }
 .button{
   cursor: pointer;
