@@ -1,0 +1,153 @@
+<?
+  $phone_f = '';
+  $school_f = '';
+  $email_f = '';
+  
+  $registered = 'Registruokitės ir pirmieji išbandykite atnaujintą e.Šviesos versiją';
+  $forma = '';
+  $textas = '';
+  
+  if ((isset($_POST['email'])) && ($_POST['email'] != '') && 
+      (isset($_POST['school'])) && ($_POST['school'] != '') && 
+      (isset($_POST['phone'])) && ($_POST['phone'] != '')) {
+    
+    $conn = new mysqli('localhost', 'newesviesalt', '4uGhsaSTsb', 'newesviesalt');
+    if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
+    
+    $stmt = $conn->prepare("INSERT INTO user_subscribe (school, phone, email) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $school, $phone, $email);
+    
+    $school = $_POST['school'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    $stmt->execute();
+    
+    $stmt->close();
+    $conn->close();
+    
+    
+    $registered = 'Ačiū, kad užsiregistravote!';
+    $forma = 'display: none';
+    $textas = 'visibility: hidden;';
+    
+  } else {
+	  
+	  if ( (isset($_POST['email'])) && (isset($_POST['school'])) && (isset($_POST['phone'])) ) {
+    
+		if ($_POST['email'] == '') {
+		  $email_f = 'error';
+		}
+		
+		if ($_POST['school'] == '') {
+		  $school_f = 'error';
+		}
+		
+		if ($_POST['phone'] == '') {
+		  $phone_f = 'error';
+		}
+		
+		$email = $_POST['email'];
+		$school = $_POST['school'];
+		$phone = $_POST['phone'];
+	}
+  }
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>e.Šviesa.lt</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="stylesheet" type="text/css" href="css/style-compiled.css">
+  <script src="js/jquery-1.10.2.js"></script>
+  <script src="js/jquery-ui.js"></script>
+
+  <script src="js/custom_transitions.js"></script>
+  <script src="js/registerscript.js"></script>
+</head>
+<body>
+
+<header class="blurred-background">
+  <div class="wrapper">
+    <div class="row">
+      <div class="column-5 logo">
+        <img src="img/logo.png" alt="">
+      </div>
+      <div class="column-7 align-right login">
+        <div class="label">Senoji e.šviesos versija:</div>
+        <div class="button outline"><a href="http://e.sviesa.lt/login">Prisijungti</a></div>
+      </div>
+    </div>
+    <div class="row register">
+      <div class="column-8">
+        <h1><? print $registered?></h1>
+        <div class="paragraph" style="<?php print $textas; ?>">
+          <p><font class="bold">Užduočių bankas</font> - tūkstančiai papildomų užduočių mokinių žinioms papildyti</p>
+          <p><font class="bold">Mokomoji medžiaga</font> - skaitmeniniai vadovėliai, leidinius papildanti teorija ir pavyzdžiai</p>
+          <p><font class="bold">Įrankiai mokytojams</font> - patogus pamokų vedimas ir mokinių pažangos stebėjimas</p>
+        </div>
+      </div>
+      <div class="column-4" style="<?php print $textas; ?>">
+        <form method="post">
+          <label for="email">El. pašto adresas*</label><br>
+          <input class="<?print $email_f;?>" type="text" name="email" id="email" placeholder="El. pašto adresas" value ="<?print $email;?>"/>
+          <br><br>
+          <label for="school">Mokyklos pavadinimas*</label><br>
+          <input class="<?print $school_f;?>" type="text" name="school" id="school" placeholder="Mokyklos pavadinimas" value ="<?print $school;?>"/>
+          <br><br>
+          <label for="phone">Telefonas*</label><br>
+          <input class="<?print $phone_f;?>" type="text" name="phone" id="phone" placeholder="Telefonas" value ="<?print $phone;?>"/>
+          <br><br>
+          <p>*Privalomi užpildyti laukai<p><br><br>
+          <!-- <input type="submit" name="submit" id="submit"> -->
+          <div id="submit" class="button colored green" onclick="document.forms[0].submit()">Registruotis</div>
+        </form>
+      </div>
+    </div>
+    <div class="row list">
+
+    </div>
+  </div>
+</header>
+
+<footer>
+  <div class="wrapper">
+    <div class="row">
+      <div class="column-4">
+        <div>
+          <h1>Kontaktinė informacija</h1>
+          <p>Leidykla „Šviesa“</p>
+          <p>Vytauto pr. 29, LT-440352 Kaunas</p>
+          <p><a target="_blank"  href="https://goo.gl/maps/MQ1nrWYYbjw">
+            <font class="bold underlined">Žemėlapis</font>
+          </a></p>
+        </div>
+      </div>
+      <div class="column-2">
+        <div>
+          <h1>Informacija</h1>
+          <p><a href="mailto:dienynas@sviesa.lt">
+            <font class="bold underlined">e.sviesa@sviesa.lt</font>
+          </a></p>
+        </div>
+      </div>
+      <div class="column-6">
+        <div>
+          <h1>e.Šviesa internete</h1>
+          <a target="_blank"  href="https://www.facebook.com/leidyklaSviesa">
+            <img src="img/fb.png" alt="Facebook">
+          </a>
+          <a target="_blank"  href="https://www.youtube.com/channel/UC8Or7E8pxHotjRH2zondbGw">
+            <img src="img/youtube.png" alt="YouTube">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="row bottom">© 2016 „Šviesa“</div>
+  </div>
+</footer>
+</body>
+</html>
