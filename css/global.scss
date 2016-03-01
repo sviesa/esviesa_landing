@@ -1,12 +1,111 @@
-div{
-  border:1px solid black;
+// div{
+//   border:1px solid black;
+// }
+@font-face {
+    font-family: apercu-light;
+    src: url(../fonts/apercu_light_pro.otf);
+    font-weight: 700;
+    font-style: normal
 }
-
+@font-face {
+    font-family: apercu-medium;
+    src: url(../fonts/apercu_medium_pro.otf);
+    font-weight: 700;
+    font-style: normal
+}
+@font-face {
+    font-family: apercu-bold;
+    src: url(../fonts/apercu_bold_pro.otf);
+    font-weight: 700;
+    font-style: normal
+}
+body{font-family: apercu-medium;}
+a{
+  color: inherit;
+  text-decoration: none;
+}
 .centered{
   text-align: center;
 }
+.title1{
+  font-family: apercu-bold;
+  padding: 100px 0;
+  color: #9c9c9c;
+  @include prefixvalue( background, linear-gradient(white, whitesmoke));
+  // background: #f5f5f5;
+  font-size: 17pt;
+  .dark{
+    color: #353535;
+  }
+}
+.title2{
+  font-family: apercu-bold;
+  padding: 100px 0;
+  color: #353535;
+  background: white;
+  font-size: 15pt;
+  h2{
+    padding-top: 30px;
+  }
+  .button{
+    display: inline;
+  }
+}
+.title3{
+  background: url(../img/bkg2.jpg) no-repeat center center;
+  @include prefix(background-size, cover);
+  overflow: hidden;
+  font-family: apercu-bold;
+  padding: 100px 0;
+  color: white;
+  font-size: 15pt;
+  @include prefix(box-shadow, 0 5px 27px black inset);
+  h2{
+    padding-top: 30px;
+  }
+  .button{
+    display: inline;
+  }
+  position: relative;
+}
+.button{
+  cursor: pointer;
+  padding: 0.6em 2.7em;// 0.7em 3em; 10px 50px;
+  @include prefix(border-radius, 5em);
+  &.outline{
+    border:2px solid;
+    &:hover{
+      border:2px solid #01d31b;
+      color: white;
+      background-color: #01d31b;
+    }
+  }
+  &.colored{
+    color: white;
+    &.red{
+      background-color: #bf0000;
+      &:hover{
+        background-color: #a40c0c;
+      }
+    }
+    &.green{
+      background-color: #01d31b;
+      &:hover{
+        background-color: #03be1a;
+      }
+    }
+  }
 
-@media #{$breakpoint-medium}{
+  &.small{
+    font-size: 15pt;
+  }
+  &.large{
+    font-size: 18pt;
+    letter-spacing: 0.02em;
+  }
+}
+
+@media #{"only screen and (min-width: " + $breakpoint-medium + ")"}{
   div.align-right{
     text-align:right;
   }
