@@ -1,0 +1,20 @@
+.transition{
+  left: 0;
+  @include prefix( transition, (left 1s, opacity 1s ease-in-out));
+
+  &.move-right{
+    left: -200px;
+    opacity: 0;
+  }
+
+  &.move-left{
+    left: 200px;
+    opacity: 0;
+  }
+
+  &.fade-in{
+    opacity: 0;
+  }
+
+}
+
