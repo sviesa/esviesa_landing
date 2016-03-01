@@ -4,6 +4,7 @@
   $email_f = '';
   
   $registered = 'Registruokitės ir pirmieji išbandykite atnaujintą e.Šviesos versiją';
+  $registered2 = '';
   $forma = '';
   $textas = '';
   
@@ -29,6 +30,7 @@
     
     
     $registered = 'Ačiū, kad užsiregistravote!';
+    $registered2 = 'Artimiausiu metu su jumis susisieksime dėl galimybės pirmiau nei kiti išbandyti naują e.sviesa.lt svetainės versiją.';
     $forma = 'display: none';
     $textas = 'visibility: hidden;';
     
@@ -88,6 +90,9 @@
           <p><font class="bold">Užduočių bankas</font> - tūkstančiai papildomų užduočių mokinių žinioms papildyti</p>
           <p><font class="bold">Mokomoji medžiaga</font> - skaitmeniniai vadovėliai, leidinius papildanti teorija ir pavyzdžiai</p>
           <p><font class="bold">Įrankiai mokytojams</font> - patogus pamokų vedimas ir mokinių pažangos stebėjimas</p>
+        </div>
+        <div class="paragraph">
+          <?php print $registered2; ?>
         </div>
       </div>
       <div class="column-4" style="<?php print $textas; ?>">
