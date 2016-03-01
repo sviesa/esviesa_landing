@@ -2,6 +2,11 @@
   $phone_f = '';
   $school_f = '';
   $email_f = '';
+  
+  $registered = 'Registruokitės ir pirmieji išbandykite atnaujintą e.Šviesos versiją';
+  $forma = '';
+  $textas = '';
+  
   if ((isset($_POST['email'])) && ($_POST['email'] != '') && 
       (isset($_POST['school'])) && ($_POST['school'] != '') && 
       (isset($_POST['phone'])) && ($_POST['phone'] != '')) {
@@ -23,23 +28,30 @@
     $conn->close();
     
     
+    $registered = 'Ačiū, kad užsiregistravote!';
+    $forma = 'display: none';
+    $textas = 'visibility: hidden;';
+    
   } else {
+	  
+	  if ( (isset($_POST['email'])) && (isset($_POST['school'])) && (isset($_POST['phone'])) ) {
     
-    if ($_POST['email'] == '') {
-      $email_f = 'error';
-    }
-    
-    if ($_POST['school'] == '') {
-      $school_f = 'error';
-    }
-    
-    if ($_POST['phone'] == '') {
-      $phone_f = 'error';
-    }
-    
-    $email = $_POST['email'];
-    $school = $_POST['school'];
-    $phone = $_POST['phone'];
+		if ($_POST['email'] == '') {
+		  $email_f = 'error';
+		}
+		
+		if ($_POST['school'] == '') {
+		  $school_f = 'error';
+		}
+		
+		if ($_POST['phone'] == '') {
+		  $phone_f = 'error';
+		}
+		
+		$email = $_POST['email'];
+		$school = $_POST['school'];
+		$phone = $_POST['phone'];
+	}
   }
 
 ?>
@@ -71,23 +83,23 @@
     </div>
     <div class="row register">
       <div class="column-8">
-        <h1>Registruokitės ir pirmieji išbandykite atnaujintą e.Šviesos versiją</h1>
-        <div class="paragraph">
+        <h1><? print $registered?></h1>
+        <div class="paragraph" style="<?php print $textas; ?>">
           <p><font class="bold">Užduočių bankas</font> - tūkstančiai papildomų užduočių mokinių žinioms papildyti</p>
           <p><font class="bold">Mokomoji medžiaga</font> - skaitmeniniai vadovėliai, leidinius papildanti teorija ir pavyzdžiai</p>
           <p><font class="bold">Įrankiai mokytojams</font> - patogus pamokų vedimas ir mokinių pažangos stebėjimas</p>
         </div>
       </div>
-      <div class="column-4">
+      <div class="column-4" style="<?php print $textas; ?>">
         <form method="post">
           <label for="email">El. pašto adresas*</label><br>
           <input class="<?print $email_f;?>" type="text" name="email" id="email" placeholder="El. pašto adresas" value ="<?print $email;?>"/>
           <br><br>
           <label for="school">Mokyklos pavadinimas*</label><br>
-          <input type="text" name="school" id="school" placeholder="Mokyklos pavadinimas" value ="<?print $school;?>"/>
+          <input class="<?print $school_f;?>" type="text" name="school" id="school" placeholder="Mokyklos pavadinimas" value ="<?print $school;?>"/>
           <br><br>
           <label for="phone">Telefonas*</label><br>
-          <input type="text" name="phone" id="phone" placeholder="Telefonas" value ="<?print $phone;?>"/>
+          <input class="<?print $phone_f;?>" type="text" name="phone" id="phone" placeholder="Telefonas" value ="<?print $phone;?>"/>
           <br><br>
           <p>*Privalomi užpildyti laukai<p><br><br>
           <!-- <input type="submit" name="submit" id="submit"> -->
