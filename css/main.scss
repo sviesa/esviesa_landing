@@ -51,7 +51,7 @@
     .equal-height{
       position: relative;
       .text-container{
-      padding: 75px 0 0 20px;
+      padding: 55px 0 0 20px;
       }
       .image-container{
         @include centerer(top, 400px);
@@ -62,7 +62,7 @@
       }
       &.image-right{
         .image-container{right:0;}
-        .text-container{padding: 75px 15px 0 10px;}
+        .text-container{padding: 55px 15px 0 10px;}
       }
     }
   }
